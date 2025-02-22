@@ -2,10 +2,10 @@ use std::fs::File;
 use std::io::{self, Read};
 use std::path::Path;
 use sha1::{Sha1, Digest};
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use serde_bencode::de;
 
-#[derive(Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 struct BencodeInfo {
     #[serde(rename = "pieces")]
     pieces: Vec<u8>,
